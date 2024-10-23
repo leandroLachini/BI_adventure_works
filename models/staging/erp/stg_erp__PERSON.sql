@@ -11,7 +11,7 @@ with
 
     , remane_table as (
         select
-        , cast(BUSINESSENTITYID as int) as PK_PERSONID
+        cast(BUSINESSENTITYID as int) as PK_PERSONID
         , FIRSTNAME || ' ' || MIDDLENAME || ' ' || LASTNAME as PERSON_FULL_NAME
         from source_person
     )
