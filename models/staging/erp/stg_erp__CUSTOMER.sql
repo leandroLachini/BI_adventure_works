@@ -1,4 +1,4 @@
-/* Conexão com a fonte dos clientes cadastrados */
+/* Conexão com a fonte dos clientes */
 
 with
     source_customer as (
@@ -11,8 +11,7 @@ with
 
     , remane_table as (
         select
-        md5(CUSTOMERID) as SK_CUSTOMERID
-        , cast(CUSTOMERID as int) as PK_CUSTOMERID
+        cast(CUSTOMERID as int) as PK_CUSTOMERID
         , cast(STOREID as int) as FK_STOREID
         , cast(TERRITORYID as int) as FK_TERRITORYID
         from source_customer

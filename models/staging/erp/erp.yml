@@ -15,9 +15,18 @@ sources:
               - not_null
 
       - name: CUSTOMER
-        description: Tabela fonte dos clientes cadastrados.
+        description: Tabela fonte dos clientes que realizaram pedidos.
         columns:
           - name: CUSTOMERID
             data-tests:
               - unique
               - not_null
+
+      - name: PERSON
+        description: Tabela fonte dos pessoas cadastradas.
+        columns:
+          - name: BUSINESSENTITYID
+            data-tests:
+              - unique
+              - not_null
+              
