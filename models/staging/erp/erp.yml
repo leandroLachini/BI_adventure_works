@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: erp_adventure_works
+    description: Sistema empresarial da Adventure Works
+    database: FEA24_9
+    schema: RAW_ADVENTURE_WORKS  
+    tables:
+      - name: SALESORDERDETAIL
+        description: Tabela fonte dos pedidos vendidos detalhados.
+        columns:
+          - name: SALESORDERID
+            data-tests:
+              - unique
+              - not_null
