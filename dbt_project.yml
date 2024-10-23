@@ -50,4 +50,4 @@ models:
       +materialized: view
       +schema: staging
       erp:
-        +materialized: view
+        +materialized: table
