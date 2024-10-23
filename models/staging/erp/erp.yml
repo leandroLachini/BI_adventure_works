@@ -13,3 +13,11 @@ sources:
             data-tests:
               - unique
               - not_null
+
+      - name: CUSTOMER
+        description: Tabela fonte dos clientes cadastrados.
+        columns:
+          - name: CUSTOMERID
+            data-tests:
+              - unique
+              - not_null
