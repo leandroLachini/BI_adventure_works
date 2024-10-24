@@ -1,7 +1,7 @@
 /* Conexão com a fonte dos pedidos vendidos detalhados */ 
 
 with
-    source_salesorderdetail as (
+    source as (
         select 
         *
         from {{ source('erp_adventure_works', 'SALESORDERDETAIL') }}
@@ -19,7 +19,7 @@ with
         , cast(ORDERQTY as int) as QUANTITY
         , cast(UNITPRICE as numeric(18,2)) as UNIT_PRICE
         , cast(UNITPRICEDISCOUNT as float) as UNITPRICEDISCOUNT
-        from source_salesorderdetail
+        from source
     )
 
 select *

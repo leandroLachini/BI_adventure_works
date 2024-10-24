@@ -1,7 +1,7 @@
 /* Conexão com a fonte dos clientes */
 
 with
-    source_customer as (
+    source as (
         select
         *
         from {{ source('erp_adventure_works', 'CUSTOMER') }}
@@ -15,7 +15,7 @@ with
         , cast(PERSONID as int) as FK_PERSONID
         , cast(STOREID as int) as FK_STOREID
         , cast(TERRITORYID as int) as FK_TERRITORYID
-        from source_customer
+        from source
     )
 
 select *

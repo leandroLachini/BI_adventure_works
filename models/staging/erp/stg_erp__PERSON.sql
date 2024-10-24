@@ -1,7 +1,7 @@
 /* Conexão com a fonte das pessoas cadastradas */
 
 with
-    source_person as (
+    source as (
         select
         *
         from {{ source("erp_adventure_works", "PERSON") }}
@@ -13,7 +13,7 @@ with
         select
         cast(BUSINESSENTITYID as int) as PK_PERSONID
         , FIRSTNAME || ' ' || MIDDLENAME || ' ' || LASTNAME as PERSON_FULL_NAME
-        from source_person
+        from source
     )
 
 select

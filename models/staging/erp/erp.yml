@@ -29,4 +29,11 @@ sources:
             data-tests:
               - unique
               - not_null
-              
+
+      - name: PRODUCT
+        description: Tabela fonte dos pessoas cadastradas.
+        columns:
+          - name: PRODUCTID
+            data-tests:
+              - unique
+              - not_null
