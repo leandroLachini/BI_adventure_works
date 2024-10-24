@@ -37,3 +37,12 @@ sources:
             data-tests:
               - unique
               - not_null
+
+      - name: CREDITCARD
+        description: Tabela fonte dos pessoas cadastradas.
+        columns:
+          - name: CREDITCARDID
+            data-tests:
+              - unique
+              - not_null
+
