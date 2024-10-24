@@ -51,3 +51,6 @@ models:
       +schema: staging
       erp:
         +materialized: table
+
+seeds:
+  +schema: seed_data
