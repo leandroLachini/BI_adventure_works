@@ -46,3 +46,20 @@ sources:
               - unique
               - not_null
 
+      - name: SALESREASON
+        description: Tabela fonte dos motivos de compra.
+        columns:
+          - name: SALESREASONID
+            data-tests:
+              - unique
+              - not_null
+
+      - name: SALESORDERHEADERSALESREASON
+        description: Tabela fonte dos motivos de compra.
+        columns:
+          - name: SALESORDERID
+            data-tests:
+              - unique
+              - not_null
+
+
