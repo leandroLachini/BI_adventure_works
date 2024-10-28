@@ -12,7 +12,7 @@ with
     , remane_table as (
         select
         md5(SALESORDERID) as SK_SALESORDERDETAIL
-        , cast(SALESORDERID as int) as PK_ORDERID
+        , cast(SALESORDERID as int) as FK_SALESORDERID
         , cast(SALESORDERDETAILID as int) as PK_ORDERDETAILID
         , cast(PRODUCTID as int) as FK_PRODUCTID
         , cast(SPECIALOFFERID as int) as FK_SPECIALOFFERID
