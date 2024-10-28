@@ -17,5 +17,4 @@ with
         from source
     )
 
-select *
-from remane_table
+select * from remane_table

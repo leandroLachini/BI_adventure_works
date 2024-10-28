@@ -6,6 +6,15 @@ sources:
     database: FEA24_9
     schema: RAW_ADVENTURE_WORKS  
     tables:
+
+      - name: SALESORDERHEADER
+        description: Tabela fonte CHAVE dos pedidos vendidos.
+        columns:
+          - name: SALESORDERID
+            data-tests:
+              - unique
+              - not_null
+
       - name: SALESORDERDETAIL
         description: Tabela fonte dos pedidos vendidos detalhados.
         columns:
@@ -55,11 +64,34 @@ sources:
               - not_null
 
       - name: SALESORDERHEADERSALESREASON
-        description: Tabela fonte dos motivos de compra.
+        description: Tabela fonte CHAVE dos motivos de compra.
         columns:
           - name: SALESORDERID
             data-tests:
               - unique
               - not_null
 
+      - name: ADDRESS
+        description: Tabela fonte dos endereço de compras camada CIDADE.
+        columns:
+          - name: ADDRESSID
+            data-tests:
+              - unique
+              - not_null
 
+      - name: STATEPROVINCE
+        description: Tabela fonte dos endereço de compras camada ESTADO.
+        columns:
+          - name: STATEPROVINCEID
+            data-tests:
+              - unique
+              - not_null
+
+      - name: COUNTRYREGION
+        description: Tabela fonte dos endereço de compras camada PAIS.
+        columns:
+          - name: COUNTRYREGIONCODE
+            data-tests:
+              - unique
+              - not_null
+              
