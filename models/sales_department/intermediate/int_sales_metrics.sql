@@ -11,9 +11,16 @@ with
         from {{ ref('stg_erp__SALESORDERDETAIL') }}
     )
 
+/* Conexao com a intermediate salesreason_joins */
+    , int_salesreason_joins as (
+        select *
+        from {{ ref('int_salesreason_joins') }}
+    )
+
 /* Fazendo os joins para popular tabela com dados relevantes */
     , joined as (
         select
+        --*
         sales_detail.SK_SALESORDERDETAIL
         , sales_detail.FK_SALESORDERID
         , sales_detail.PK_ORDERDETAILID
@@ -38,9 +45,15 @@ with
         , sales_header.SUBTOTAL
         , sales_header.TAXA
         , sales_header.FREIGHT
-        , sales_header.TOTAL_SALES 
+        , sales_header.TOTAL_SALES
+        , int_salesreason_joins.PK_SALESREASONID
+        , int_salesreason_joins.NAME_SALESREASON
+        , int_salesreason_joins.TYPE_SALESREASON
         from sales_detail
-        left join sales_header on sales_header.PK_SALESORDERID = sales_detail.FK_SALESORDERID
+        left join sales_header 
+            on sales_header.PK_SALESORDERID = sales_detail.FK_SALESORDERID
+        left join int_salesreason_joins 
+            on int_salesreason_joins.PK_SALESORDERID = sales_header.PK_SALESORDERID
     )
 
 /* Gerando as metricas para analise */
