@@ -1,0 +1,80 @@
+version: 2
+
+models:
+  - name: dim_DATE
+    description: "Tabela que contém informações detalhadas sobre datas, incluindo dados relacionados ao dia, mês, trimestre e ano."
+    columns:
+      - name: DATE_DAY
+        description: "Data atual."
+      - name: PRIOR_DATE_DAY
+        description: "Data do dia anterior."
+      - name: NEXT_DATE_DAY
+        description: "Data do dia seguinte."
+      - name: PRIOR_YEAR_DATE_DAY
+        description: "Data correspondente ao dia atual no ano anterior."
+      - name: PRIOR_YEAR_OVER_YEAR_DATE_DAY
+        description: "Data do dia seguinte correspondente ao ano anterior."
+      - name: DAY_OF_WEEK
+        description: "Número do dia da semana (1-7, onde 1 é domingo)."
+      - name: DAY_OF_WEEK_ISO
+        description: "Número do dia da semana no padrão ISO (1-7, onde 1 é segunda-feira)."
+      - name: DAY_OF_WEEK_NAME
+        description: "Nome do dia da semana."
+      - name: DAY_OF_WEEK_NAME_SHORT
+        description: "Nome do dia da semana abreviado."
+      - name: DAY_OF_MONTH
+        description: "Dia do mês atual."
+      - name: DAY_OF_YEAR
+        description: "Dia do ano atual (1-365/366)."
+      - name: WEEK_START_DATE
+        description: "Data do primeiro dia da semana."
+      - name: WEEK_END_DATE
+        description: "Data do último dia da semana."
+      - name: PRIOR_YEAR_WEEK_START_DATE
+        description: "Data do início da semana correspondente ao ano anterior."
+      - name: PRIOR_YEAR_WEEK_END_DATE
+        description: "Data do final da semana correspondente ao ano anterior."
+      - name: WEEK_OF_YEAR
+        description: "Número da semana no ano (1-52/53)."
+      - name: ISO_WEEK_START_DATE
+        description: "Data do início da semana no padrão ISO."
+      - name: ISO_WEEK_END_DATE
+        description: "Data do final da semana no padrão ISO."
+      - name: PRIOR_YEAR_ISO_WEEK_START_DATE
+        description: "Data do início da semana ISO correspondente ao ano anterior."
+      - name: PRIOR_YEAR_ISO_WEEK_END_DATE
+        description: "Data do final da semana ISO correspondente ao ano anterior."
+      - name: ISO_WEEK_OF_YEAR
+        description: "Número da semana ISO no ano."
+      - name: PRIOR_YEAR_WEEK_OF_YEAR
+        description: "Número da semana correspondente ao ano anterior."
+      - name: PRIOR_YEAR_ISO_WEEK_OF_YEAR
+        description: "Número da semana ISO correspondente ao ano anterior."
+      - name: MONTH_OF_YEAR
+        description: "Número do mês (1-12)."
+      - name: MONTH_NAME
+        description: "Nome do mês."
+      - name: MONTH_NAME_SHORT
+        description: "Nome do mês abreviado."
+      - name: MONTH_START_DATE
+        description: "Data do primeiro dia do mês."
+      - name: MONTH_END_DATE
+        description: "Data do último dia do mês."
+      - name: PRIOR_YEAR_MONTH_START_DATE
+        description: "Data do primeiro dia do mês correspondente ao ano anterior."
+      - name: PRIOR_YEAR_MONTH_END_DATE
+        description: "Data do último dia do mês correspondente ao ano anterior."
+      - name: QUARTER_OF_YEAR
+        description: "Número do trimestre no ano (1-4)."
+      - name: QUARTER_START_DATE
+        description: "Data do início do trimestre."
+      - name: QUARTER_END_DATE
+        description: "Data do final do trimestre."
+      - name: YEAR_NUMBER
+        description: "Número do ano."
+      - name: YEAR_START_DATE
+        description: "Data do primeiro dia do ano."
+      - name: YEAR_END_DATE
+        description: "Data do último dia do ano."
+      - name: DAY_OF_WEEK_NAME_PT
+        description: "Nome do dia da semana em português."

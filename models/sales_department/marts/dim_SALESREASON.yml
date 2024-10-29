@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: dim_SALESREASON
+    description: "Tabela dimensão que contém informações sobre os motivos de venda/compra."
+    columns:
+      - name: PK_SALESORDERID
+        description: "Chave primaria do ID do pedido de venda."
+      - name: PK_SALESREASONID
+        description: "Chave primaria do ID do motivo da venda."
+      - name: NAME_SALESREASON
+        description: "Descricao do motivo de venda."
+      - name: TYPE_SALESREASON
+        description: "Descricao do tipo do motivo de venda."
