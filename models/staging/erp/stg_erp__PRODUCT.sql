@@ -12,10 +12,6 @@ with
     , remane_table as (
         select
         cast(PRODUCTID as int) as PK_PRODUCTID
-        , cast(SIZEUNITMEASURECODE as varchar) as FK_SIZEUNITMEASURECODE
-        , cast(WEIGHTUNITMEASURECODE as varchar) as FK_WEIGHTUNITMEASURECODE
-        , cast(PRODUCTSUBCATEGORYID as int) as FK_PRODUCTSUBCATEGORYID
-        , cast(PRODUCTMODELID as int) as FK_PRODUCTMODELID
         , cast(SELLSTARTDATE as date) as SELLSTARTDATE
         , cast(SELLENDDATE as date) as SELLENDDATE
         , cast(NAME as varchar) as PRODUCT_NAME 
@@ -28,10 +24,6 @@ with
         , cast(LISTPRICE as float) as LISTPRICE
         , cast(SIZE as varchar) as PRODUCT_SIZE
         , cast(WEIGHT as int) as PRODUCT_WEIGHT
-        --, cast(DAYSTOMANUFACTURE as varchar) as
-        , cast(PRODUCTLINE as varchar) as PRODUCTLINE
-        , cast(CLASS as varchar) as CLASS
-        , cast(STYLE as varchar) as STYLE
         from source
     )
 

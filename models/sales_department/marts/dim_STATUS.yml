@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dim_STATUS
+    description: "Tabela dimensão que contém informações sobre os STATUS das vendas."
+    columns:
+      - name: STATUSID
+        description: "Chave primaria do ID STATUS."
+      - name: NAME_STATUS
+        description: "Nome do STATUS do pedido."

@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: dim_PAYMENT
+    description: "Tabela dimensão que contém informações sobre os cartoes de creditos."
+    columns:
+      - name: PK_CREDITCARDID
+        description: "Chave primaria do ID cartao de credito."
+      - name: CARDTYPE
+        description: "Nome do tipo do cartao."
+      
