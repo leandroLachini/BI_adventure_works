@@ -4,7 +4,7 @@ https://medium.com/indiciumtech/date-dimension-how-to-create-a-practical-and-use
 
 with 
      raw_generated_data as ( 
-        {{ dbt_date.get_date_dimension("2000-01-01", "2024-12-31") }} 
+        {{ dbt_date.get_date_dimension('2011-05-31', '2014-06-30') }} 
     ) 
 
     , portuguese_renamed as ( 

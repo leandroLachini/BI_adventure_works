@@ -1,14 +1,17 @@
 with
+/* Conexao com a staging SALESORDERHEADER */
     sales_header as (
         select *
         from {{ ref('stg_erp__SALESORDERHEADER') }}
     )
 
+/* Conexao com a staging SALESORDERDETAIL */
     , sales_detail as (
         select *
         from {{ ref('stg_erp__SALESORDERDETAIL') }}
     )
 
+/* Fazendo os joins para popular tabela com dados relevantes */
     , joined as (
         select
         sales_detail.SK_SALESORDERDETAIL
@@ -40,9 +43,10 @@ with
         left join sales_header on sales_header.PK_SALESORDERID = sales_detail.FK_SALESORDERID
     )
 
+/* Gerando as metricas para analise */
     , metrics as (
         select 
-            *
+            joined. *
             , {{gross_income('QUANTITY', 'UNIT_PRICE')}}
             , {{year('ORDERDATE')}}
             , {{net_value('QUANTITY', 'UNIT_PRICE', 'UNITPRICEDISCOUNT')}}
@@ -56,6 +60,7 @@ with
         from joined
     )
 
+/* Formato final da tabela com as metricas */
     , final_table as (
         select
         *
