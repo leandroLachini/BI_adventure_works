@@ -1,13 +1,12 @@
 /* Dimensao motivo da compra */
 
 with
-    int_customer as (
+    int_salesreason as (
         select
-        PK_SALESORDERID
-        , PK_SALESREASONID
-        , NAME_SALESREASON
-        , TYPE_SALESREASON
-        from {{ ref('int_salesreason_joins') }}
+            PK_SALESREASONID
+            , NAME_SALESREASON
+            , TYPE_SALESREASON
+        from {{ ref('stg_erp__SALESREASON') }}
     )
 
-select * from int_customer
+select * from int_salesreason
