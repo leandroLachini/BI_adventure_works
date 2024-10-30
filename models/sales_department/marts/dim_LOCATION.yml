@@ -4,8 +4,8 @@ models:
   - name: dim_LOCATION
     description: "Tabela dimensão que contém informações sobre as cidades, estados e paises."
     columns:
-      - name: FK_TERRITORYID
-        description: "Chave estrangeria do ID da localização."
+      - name: PK_ADDRESSID
+        description: "Chave PRIMARIA do ID da localização."
       - name: CITY
         description: "Nome da cidade."
       - name: STATE_NAME

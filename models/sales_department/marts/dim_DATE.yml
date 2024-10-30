@@ -76,5 +76,5 @@ models:
         description: "Data do primeiro dia do ano."
       - name: YEAR_END_DATE
         description: "Data do último dia do ano."
-      - name: DAY_OF_WEEK_NAME_PT
-        description: "Nome do dia da semana em português."
+      - name: MONTH_YEAR 
+        description: "Nome do mes abreviado - numero do ano."

@@ -27,7 +27,7 @@ with
 
     , joined as (
         select
-        state_province.FK_TERRITORYID
+        address.PK_ADDRESSID
         , address.CITY
         , state_province.STATE_NAME
         , country_region.COUNTRY_NAME
