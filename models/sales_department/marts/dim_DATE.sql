@@ -7,19 +7,12 @@ with
         {{ dbt_date.get_date_dimension('2011-05-31', '2014-07-01') }} 
     ) 
 
-    , portuguese_renamed as ( 
+    , id_year_month as ( 
         select 
              raw_generated_data. *
-             , case 
-                when raw_generated_data.day_of_week =  1  then 'Domingo' 
-                when raw_generated_data.day_of_week =  2  then 'Segunda-feira' 
-                when raw_generated_data.day_of_week =  3  then 'Terça-feira' 
-                when raw_generated_data.day_of_week =  4  then 'Quarta-feira' 
-                when raw_generated_data.day_of_week =  5  then 'Quinta-feira' 
-                when raw_generated_data.day_of_week =  6  then 'Sexta-feira' 
-                when raw_generated_data.day_of_week =  7  then 'Sábado' 
-            end as day_of_week_name_pt 
+            , MONTH_NAME_SHORT || '-' || YEAR_NUMBER as MONTH_YEAR
+            , cast(YEAR_NUMBER || MONTH_OF_YEAR as numeric(20,0)) as YEAR_MONTH
         from raw_generated_data 
     ) 
 
-select * from portuguese_renamed
+select * from id_year_month

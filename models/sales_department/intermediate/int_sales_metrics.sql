@@ -35,7 +35,7 @@ with
         , sales_header.FK_SALESPERSONID
         , sales_header.FK_TERRITORYID
         , sales_header.FK_BILLTOADDRESSID       
-        , sales_header.FK_SHIPTOADDRESSID
+        , sales_header.FK_SHIPTOADDRESSID as FK_ADDRESSID
         , sales_header.FK_SHIPMETHODID
         , sales_header.FK_CREDITCARDID
         , sales_header.FK_CURRENCYRATEID
@@ -46,14 +46,9 @@ with
         , sales_header.TAXA
         , sales_header.FREIGHT
         , sales_header.TOTAL_SALES
-        , int_salesreason_joins.PK_SALESREASONID
-        , int_salesreason_joins.NAME_SALESREASON
-        , int_salesreason_joins.TYPE_SALESREASON
         from sales_detail
         left join sales_header 
             on sales_header.PK_SALESORDERID = sales_detail.FK_SALESORDERID
-        left join int_salesreason_joins 
-            on int_salesreason_joins.PK_SALESORDERID = sales_header.PK_SALESORDERID
     )
 
 /* Gerando as metricas para analise */
@@ -61,8 +56,8 @@ with
         select 
             joined. *
             , {{gross_income('QUANTITY', 'UNIT_PRICE')}}
-            , {{year('ORDERDATE')}}
             , {{net_value('QUANTITY', 'UNIT_PRICE', 'UNITPRICEDISCOUNT')}}
+            , cast(GROSS_VALUE - NET_VALUE as numeric(30,4)) as DISCOUNT_VALUE
             --, SALES_QUANTITY * SALES_UNITPRICE
             --    * (1 - DISCOUNT_PERCENT) as NET_VALUE
             --, VALUE_SHIP / (count(*) over(partition by NUMBER_ORDER)) as PRORATED_SHIPPING

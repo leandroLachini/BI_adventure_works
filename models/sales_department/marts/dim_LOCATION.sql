@@ -3,7 +3,7 @@
 with
     int_location as (
         select
-        FK_TERRITORYID
+        PK_ADDRESSID
         , CITY
         , STATE_NAME
         , COUNTRY_NAME
