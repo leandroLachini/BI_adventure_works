@@ -9,7 +9,7 @@ with
         select
         sum(GROSS_VALUE) as GROSS_VALUE
         from {{ ref('int_sales_metrics') }}
-        where YEAR_ORDER = '2011'
+        where year(ORDERDATE) = '2011'
     ) -- $12.646.112,16
 
 select GROSS_VALUE
