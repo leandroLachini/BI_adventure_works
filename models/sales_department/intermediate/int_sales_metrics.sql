@@ -20,8 +20,7 @@ with
     , joined as (
         select
         --*
-        sales_detail.SK_SALESORDERDETAIL
-        , sales_detail.FK_SALESORDERID
+        sales_detail.FK_SALESORDERID
         , sales_detail.PK_ORDERDETAILID
         , sales_detail.FK_PRODUCTID
         , sales_detail.FK_SPECIALOFFERID
@@ -57,8 +56,12 @@ with
     , metrics as (
         select 
             joined. *
-            , {{gross_income('QUANTITY', 'UNIT_PRICE')}}
-            , {{net_value('QUANTITY', 'UNIT_PRICE', 'UNITPRICEDISCOUNT')}}
+            , SUBTOTAL / {{prorated('PK_SALESORDERID')}} as PRORATED_SUBTOTAL
+            , TAXA / {{prorated('PK_SALESORDERID')}} as PRORATED_TAXA
+            , FREIGHT / {{prorated('PK_SALESORDERID')}} as PRORATED_FREIGHT
+            , TOTAL_SALES / {{prorated('PK_SALESORDERID')}} as PRORATED_TOTAL_SALES
+            , {{gross_income('QUANTITY', 'UNIT_PRICE')}} as GROSS_VALUE
+            , {{net_value('QUANTITY', 'UNIT_PRICE', 'UNITPRICEDISCOUNT')}} as NET_VALUE
             , cast(GROSS_VALUE - NET_VALUE as numeric(30,4)) as DISCOUNT_VALUE
             --, SALES_QUANTITY * SALES_UNITPRICE
             --    * (1 - DISCOUNT_PERCENT) as NET_VALUE
@@ -73,7 +76,34 @@ with
 /* Formato final da tabela com as metricas */
     , final_table as (
         select
-        *
+        FK_SALESORDERID
+        , PK_ORDERDETAILID
+        , FK_PRODUCTID
+        , FK_SPECIALOFFERID
+        , QUANTITY
+        , UNIT_PRICE
+        , UNITPRICEDISCOUNT
+        , PK_SALESORDERID
+        , FK_STATUSID
+        , FK_CUSTOMERID
+        , FK_SALESPERSONID
+        , FK_TERRITORYID
+        , FK_BILLTOADDRESSID       
+        , FK_ADDRESSID
+        , FK_SHIPMETHODID
+        , FK_CREDITCARDID
+        , FK_CURRENCYRATEID
+        , FK_SALESREASONID
+        , ORDERDATE
+        , DUEDATE
+        , SHIPDATE
+        , PRORATED_SUBTOTAL
+        , PRORATED_TAXA
+        , PRORATED_FREIGHT
+        , PRORATED_TOTAL_SALES
+        , GROSS_VALUE
+        , NET_VALUE
+        , DISCOUNT_VALUE
         from metrics
     )
 
