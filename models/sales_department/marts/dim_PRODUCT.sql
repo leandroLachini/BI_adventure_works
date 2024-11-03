@@ -1,20 +1,16 @@
 /* Dimensao produtos */
 
 with
-    staging as (
+    int_product as (
         select
         PK_PRODUCTID
-        , SELLSTARTDATE        
-        , SELLENDDATE
         , PRODUCT_NAME
         , PRODUCT_COLOR
-        , SAFETYSTOCK
-        , REORDERPOINT
-        , STANDARDCOST
-        , LISTPRICE
         , PRODUCT_SIZE
         , PRODUCT_WEIGHT
-        from {{ ref("stg_erp__PRODUCT")}}
+        , NAME_SUBCATEGORY_PRODUCT
+        , NAME_CATEGORY_PRODUCT
+        from {{ ref("int_product_joins")}}
     )
 
-select * from staging
+select * from int_product

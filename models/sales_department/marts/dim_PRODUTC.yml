@@ -6,23 +6,15 @@ models:
     columns:
       - name: PK_PRODUCTID
         description: "Chave primaria do ID do produto."
-      - name: SELLSTARTDATE
-        description: "Data de inicio de venda do produto."
-      - name: SELLENDDATE
-        description: "Data de final de venda do produto."
       - name: PRODUCT_NAME
         description: "Nome do produto."
       - name: PRODUCT_COLOR
         description: "Nome da cor do produto."
-      - name: SAFETYSTOCK
-        description: "Valor da quantidade de estoque satisfatoria."
-      - name: REORDERPOINT
-        description: "Valor da quantidade de estoque para recompra."
-      - name: STANDARDCOST
-        description: "Valor do custo de compra do produto."
-      - name: LISTPRICE
-        description: "Valor de venda do produto."
       - name: PRODUCT_SIZE
         description: "Tamanho do produto."
       - name: PRODUCT_WEIGHT
         description: "Peso do produto."
+      - name: NAME_SUBCATEGORY_PRODUCT
+        description: "Name of product subcategory."
+      - name: NAME_CATEGORY_PRODUCT
+        description: "PName of product category."
