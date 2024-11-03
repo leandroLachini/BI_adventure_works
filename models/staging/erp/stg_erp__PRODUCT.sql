@@ -12,6 +12,7 @@ with
     , remane_table as (
         select
         cast(PRODUCTID as int) as PK_PRODUCTID
+        , cast(PRODUCTSUBCATEGORYID as int) as FK_PRODUCTSUBCATEGORYID
         , cast(SELLSTARTDATE as date) as SELLSTARTDATE
         , cast(SELLENDDATE as date) as SELLENDDATE
         , cast(NAME as varchar) as PRODUCT_NAME 

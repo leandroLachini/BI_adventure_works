@@ -94,4 +94,20 @@ sources:
             data-tests:
               - unique
               - not_null
+
+      - name: PRODUCTSUBCATEGORY
+        description: Tabela fonte subcategory of prodcuts.
+        columns:
+          - name: PRODUCTSUBCATEGORYID
+            data-tests:
+              - unique
+              - not_null
+
+      - name: PRODUCTCATEGORY
+        description: Tabela fonte category of prodcuts.
+        columns:
+          - name: PRODUCTCATEGORYID
+            data-tests:
+              - unique
+              - not_null
               
