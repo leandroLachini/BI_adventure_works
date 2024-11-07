@@ -39,6 +39,8 @@ with
     , joined as (
         select
         product.PK_PRODUCTID
+        , product.STANDARDCOST
+        , product.LISTPRICE
         , product.PRODUCT_NAME
         , product.PRODUCT_COLOR
         , product.PRODUCT_SIZE
@@ -49,6 +51,30 @@ with
         left join joined_category on joined_category.PK_PRODUCTSUBCATEGORYID = product.FK_PRODUCTSUBCATEGORYID
     )
 
+    /* Gerando as metricas para analise */
+    , metrics as (
+        select 
+            joined. *
+            , LISTPRICE - STANDARDCOST as PRODUCT_MARGIN
+        from joined
+    )
+
+/* Formato final da tabela com as metricas */
+    , final_table as (
+        select
+        PK_PRODUCTID
+        , STANDARDCOST
+        , LISTPRICE
+        , PRODUCT_MARGIN
+        , PRODUCT_NAME
+        , PRODUCT_COLOR
+        , PRODUCT_SIZE
+        , PRODUCT_WEIGHT
+        , NAME_SUBCATEGORY_PRODUCT
+        , NAME_CATEGORY_PRODUCT
+        from metrics
+    )
+
 select
 *
-from joined
+from final_table
