@@ -4,6 +4,9 @@ with
     int_product as (
         select
         PK_PRODUCTID
+        , STANDARDCOST
+        , LISTPRICE
+        , PRODUCT_MARGIN
         , PRODUCT_NAME
         , PRODUCT_COLOR
         , PRODUCT_SIZE
