@@ -1,22 +1,22 @@
 with
-/* Conexao com a staging SALESORDERHEADER */
+/* conection with staging SALESORDERHEADER */
     sales_header as (
         select *
         from {{ ref('stg_erp__SALESORDERHEADER') }}
     )
 
-/* Conexao com a staging SALESORDERDETAIL */
+/* conection with staging SALESORDERDETAIL */
     , sales_detail as (
         select *
         from {{ ref('stg_erp__SALESORDERDETAIL') }}
     )
 
-/* Select da SALESREASONID = 2 */
+/* Select of SALESREASONID = 2 */
     , reason_2 as (
         {{select_reason(2)}}
     )
 
-/* Fazendo os joins para popular tabela com dados relevantes */
+/* making joins to populate a table with relevant data */
     , joined as (
         select
         --*
@@ -52,7 +52,7 @@ with
             on reason_2.PK_SALESORDERID = sales_header.PK_SALESORDERID
     )
 
-/* Gerando as metricas para analise */
+/* generating metrics for analysis */
     , metrics as (
         select 
             joined. *
@@ -63,17 +63,10 @@ with
             , {{gross_income('QUANTITY', 'UNIT_PRICE')}} as GROSS_VALUE
             , {{net_value('QUANTITY', 'UNIT_PRICE', 'UNITPRICEDISCOUNT')}} as NET_VALUE
             , cast(GROSS_VALUE - NET_VALUE as numeric(30,4)) as DISCOUNT_VALUE
-            --, SALES_QUANTITY * SALES_UNITPRICE
-            --    * (1 - DISCOUNT_PERCENT) as NET_VALUE
-            --, VALUE_SHIP / (count(*) over(partition by NUMBER_ORDER)) as PRORATED_SHIPPING
-            --, case
-            --    when DISCOUNT_PERCENT > 0 then true
-            --    else false
-            --end as HAS_DISCOUNT
         from joined
     )
 
-/* Formato final da tabela com as metricas */
+/* final format of the table with metrics */
     , final_table as (
         select
         FK_SALESORDERID
@@ -108,22 +101,3 @@ with
     )
 
 select * from final_table
-
-/* with
-    sales_header as (
-        select *
-        from {{ ref('stg_erp__SALESORDERHEADER') }}
-    )
-    
-    , reason_2 as (
-        {{select_reason(2)}}
-    )
-
-    , joined as (
-        select
-        *
-        from sales_header
-        left join reason_2 on reason_2.PK_SALESORDERID = sales_header.PK_SALESORDERID
-    )
-
-select * from joined */

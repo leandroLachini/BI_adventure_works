@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_erp__PERSON
+    description: "Sheet staging that have information about person."
+    columns:
+      - name: PK_PERSONID
+        description: "Primary key for Person records."
+      - name: PERSON_FULL_NAME
+        description: "Concat with FIRSTNAME + MIDDLENAME + LASTNAME."

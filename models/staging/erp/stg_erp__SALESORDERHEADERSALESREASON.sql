@@ -1,4 +1,4 @@
-/* Conexão com a fonte CHAVE dos motivos de compra */
+/* connection with product sales order header sales reason source.*/
 
 with
     source as (
@@ -7,7 +7,7 @@ with
         from {{ source('erp_adventure_works', 'SALESORDERHEADERSALESREASON') }}
     )
 
-/* Renomeando colunas da tabela e categorizando os dados */
+/* renaming table columns and categorizing data */
 
     , remane_table as (
         select

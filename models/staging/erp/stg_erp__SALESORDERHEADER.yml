@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_erp__SALESORDERHEADER
+    description: "Sheet staging that have information general sales order."
+    columns:
+      - name: FK_SHIPTOADDRESSID
+        description: "Customer shipping address. Foreign key to Address."
+      - name: FK_SHIPMETHODID
+        description: "Shipping method. Foreign key to ShipMethod."
+      - name: FK_CREDITCARDID
+        description: "Credit card identification number. Foreign key to CreditCard."
+      - name: FK_CURRENCYRATEID
+        description: "Currency exchange rate used. Foreign key to CurrencyRate."
+      - name: ORDERDATE
+        description: "Dates the sales order was created. Default: getdate()"
+      - name: DUEDATE
+        description: "Date the order is due to the customer."
+      - name: SHIPDATE
+        description: "Date the order was shipped to the customer."
+      - name: SUBTOTAL
+        description: "Sales subtotal. Computed as SUM(SalesOrderDetail.LineTotal)for the appropriate SalesOrderID. Default: 0.00."
+      - name: TAXA
+        description: "Tax amount. Default: 0.00"
+      - name: FREIGHT
+        description: "Shipping cost. Default: 0.00"
+      - name: TOTAL_SALES
+        description: "Total due from customer. Computed as Subtotal + TaxAmt + Freight."

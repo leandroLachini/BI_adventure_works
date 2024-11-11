@@ -1,4 +1,4 @@
-/* Source with staging produtc */
+/* conection with staging produtc */
 
 with
     product as (
@@ -7,7 +7,7 @@ with
         from {{ ref("stg_erp__PRODUCT")}}
     )
 
-/* Source with staging productsubcategory */
+/* conection with staging productsubcategory */
     
     , product_subcategory as (
         select
@@ -15,7 +15,7 @@ with
         from {{ ref("stg_erp__PRODUCTSUBCATEGORY")}}
     )
 
-    /* Source with staging productcategory */
+/* conection with staging productcategory */
     
     , product_category as (
         select
@@ -23,7 +23,7 @@ with
         from {{ ref("stg_erp__PRODUCTCATEGORY")}}
     )
 
-/* Fazendo os joins subcategory and category */
+/* making joins to populate a table with relevant data */
 
     , joined_category as (
         select
@@ -34,7 +34,7 @@ with
         left join product_category on product_category.PK_PRODUCTCATEGORYID = product_subcategory.FK_PRODUCTCATEGORYID
     )
 
-/* Fazendo os joins para popular tabela com dados relevantes */
+/* making joins to populate a table with relevant data */
 
     , joined as (
         select
@@ -51,7 +51,7 @@ with
         left join joined_category on joined_category.PK_PRODUCTSUBCATEGORYID = product.FK_PRODUCTSUBCATEGORYID
     )
 
-    /* Gerando as metricas para analise */
+/* generating metrics for analysis */
     , metrics as (
         select 
             joined. *
@@ -59,7 +59,7 @@ with
         from joined
     )
 
-/* Formato final da tabela com as metricas */
+/* final format of the table with metrics */
     , final_table as (
         select
         PK_PRODUCTID
@@ -75,6 +75,4 @@ with
         from metrics
     )
 
-select
-*
-from final_table
+select * from final_table

@@ -1,4 +1,4 @@
-/* Conexao com a staging clientes */
+/* conection with staging customer */
 
 with
     customer as (
@@ -7,7 +7,7 @@ with
         from {{ ref("stg_erp__CUSTOMER")}}
     )
 
-/* Conexao com a staging pessoas */
+/* conection with staging person */
     
     , person as (
         select
@@ -15,7 +15,7 @@ with
         from {{ ref("stg_erp__PERSON")}}
     )
 
-/* Fazendo os joins para popular tabela com dados relevantes */
+/* making joins to populate a table with relevant data */
 
     , joined as (
         select

@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_erp__STATEPROVINCE
+    description: "Sheet staging that have information about address."
+    columns:
+      - name: PK_STATEPROVINCEID
+        description: "Primary key for StateProvince records."
+      - name: FK_COUNTRYREGIONCODE
+        description: " Foreign key to CountryRegion."
+      - name: FK_TERRITORYID
+        description: "ID of the territory in which the state or province is located. 
+                      Foreign key to SalesTerritory."
+      - name: STATE_NAME
+        description: "State or province name."

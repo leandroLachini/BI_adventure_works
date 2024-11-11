@@ -1,22 +1,19 @@
-/* Conexao com a staging HeaderSalesReason */
-
 with
+/* conection with staging HeaderSalesReason */
     header_sales_reason as (
         select
         *
         from {{ ref("stg_erp__SALESORDERHEADERSALESREASON")}}
     )
 
-/* Conexao com a staging SalesReason */
-
+/* conection with staging SalesReason */
     , sales_reason as (
         select
         *
         from {{ ref("stg_erp__SALESREASON")}}
     )
 
-/* Fazendo os joins para popular tabela com dados relevantes */
-
+/* making joins to populate a table with relevant data */
     , joined as (
         select
         header_sales_reason.PK_SALESORDERID

@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_erp__PRODUCT
+    description: "Sheet staging that have information about products."
+    columns:
+      - name: PK_PRODUCTID
+        description: "Primary key for Product records."
+      - name: FK_PRODUCTSUBCATEGORYID
+        description: "Product is a member of this product subcategory. 
+                      Foreign key to ProductSubCategory."
+      - name: SELLSTARTDATE
+        description: "Date the product was available for sale."
+      - name: SELLENDDATE
+        description: "Date the product was no longer available for sale."
+      - name: PRODUCT_COLOR
+        description: "Product color"
+      - name: SAFETYSTOCK
+        description: "Minimum inventory quantity."
+      - name: REORDERPOINT
+        description: "Inventory level that triggers a purchase order or work order."
+      - name: STANDARDCOST
+        description: "Standard cost of the product."
+      - name: LISTPRICE
+        description: "Selling price."
+      - name: PRODUCT_SIZE
+        description: "Product size."
+      - name: PRODUCT_WEIGHT
+        description: "Product weight."

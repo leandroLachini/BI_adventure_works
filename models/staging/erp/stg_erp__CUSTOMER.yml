@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_erp__CUSTOMER
+    description: "Sheet staging that have information about address."
+    columns:
+      - name: PK_CUSTOMERID
+        description: "Primary key for customer records."
+      - name: FK_PERSONID
+        description: "Unique identification number for the person. 
+                      Foreign key to Person table."
+      - name: FK_STOREID
+        description: "Unique identification number for the store. 
+                      Foreign key to Store table."
+      - name: FK_TERRITORYID
+        description: "Unique identification number for the territory. 
+                      Foreign key to territory table."

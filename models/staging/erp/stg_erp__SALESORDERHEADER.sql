@@ -1,4 +1,4 @@
-/* Conexão com a fonte CHAVE dos pedidos vendidos */ 
+/* connection with product sales order header source.*/
 
 with
     source as (
@@ -7,7 +7,7 @@ with
         from {{ source('erp_adventure_works', 'SALESORDERHEADER') }}
     )
 
-/* Renomeando colunas da tabela e categorizando os dados */
+/* renaming table columns and categorizing data */
 
     , remane_table as (
         select
@@ -21,7 +21,6 @@ with
         ,cast(SHIPMETHODID as int) as FK_SHIPMETHODID
         ,cast(CREDITCARDID as int) as FK_CREDITCARDID
         ,cast(CURRENCYRATEID as int) as FK_CURRENCYRATEID
-        ,cast(ROWGUID as varchar) as FK_ROWGUID
         ,cast(ORDERDATE as date) as ORDERDATE
         ,cast(DUEDATE as date) as DUEDATE
         ,cast(SHIPDATE as date) as SHIPDATE

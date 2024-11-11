@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_erp__SALESORDERHEADERREASON
+    description: "Staging table that have information cross-reference table mapping sales orders to sales reason codes."
+    columns:
+      - name: PK_SALESORDERID
+        description: "Primary key. Foreign key to SalesOrderHeader."
+      - name: FK_SALESREASONID
+        description: "Primary key. Foreign key to SalesReason."

@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_erp__ADDRESS
+    description: "Sheet staging that have information about address."
+    columns:
+      - name: PK_ADDRESSID
+        description: "Primary key for Address records."
+      - name: FK_STATEPROVINCEID
+        description: "Unique identification number for the state or province. 
+                      Foreign key to StateProvince table."
+      - name: CITY
+        description: "Name of the city."
