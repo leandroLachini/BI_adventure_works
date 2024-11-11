@@ -1,4 +1,4 @@
-/* Conexão com a fonte de pagamentos */
+/* connection with creditcard source.*/
 
 with
     source as (
@@ -7,7 +7,7 @@ with
         from {{ source('erp_adventure_works', 'CREDITCARD') }}
     )
 
-/* Renomeando colunas da tabela e categorizando os dados */
+/* renaming table columns and categorizing data */
 
     , remane_table as (
         select

@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_erp__PRODUCTSUBCATEGORY
+    description: "Sheet staging that have information about product subcategory."
+    columns:
+      - name: PK_PRODUCTSUBCATEGORYID
+        description: "Primary key for ProductSubcategory records."
+      - name: FK_PRODUCTCATEGORYID
+        description: "Product category identification number. 
+                      Foreign key to ProductCategory."
+      - name: NAME_SUBCATEGORY_PRODUCT
+        description: "Subcategory description."

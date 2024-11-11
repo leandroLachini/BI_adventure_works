@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_erp__SALESORDERDETAIL
+    description: "Sheet staging that have information individual products associated with a specific sales order.."
+    columns:
+      - name: FK_SALESORDERID
+        description: "Primary key. Foreign key to SalesOrderHeader."
+      - name: PK_ORDERDETAILID
+        description: "Primary key. One incremental unique number per product sold."
+      - name: FK_PRODUCTID
+        description: "Product sold to customer. Foreign key to Product."
+      - name: FK_SPECIALOFFERID
+        description: "Promotional code. Foreign key to SpecialOffer."
+      - name: QUANTITY
+        description: "Quantity ordered per product."
+      - name: UNIT_PRICE
+        description: "Selling price of a single product."
+      - name: UNITPRICEDISCOUNT
+        description: "Discount amount. Default 0.0"

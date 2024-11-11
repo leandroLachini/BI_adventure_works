@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_erp__COUNTRYREGION
+    description: "Sheet staging that have information about address."
+    columns:
+      - name: PK_COUNTRYREGIONCODE
+        description: "Primary key for CountryRegion."
+      - name: COUNTRY_NAME
+        description: "Country or region name."

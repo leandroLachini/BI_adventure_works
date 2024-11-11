@@ -1,4 +1,4 @@
-/* Conexão com a fonte dos endereços de compra camada CIDADE */
+/* connection with buy address source (city layer) */
 
 with
     source as (
@@ -7,7 +7,7 @@ with
         from {{ source('erp_adventure_works', 'ADDRESS') }}
     )
 
-/* Renomeando colunas da tabela e categorizando os dados */
+/* renaming table columns and categorizing data */
 
     , remane_table as (
         select

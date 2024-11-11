@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_erp__SALESREASON
+    description: "Staging table that have information lookup table of customer purchase reasons."
+    columns:
+      - name: PK_SALESREASONID
+        description: "Primary key for SalesReason records."
+      - name: NAME_SALESREASON
+        description: "Sales reason description."
+      - name: TYPE_SALESREASON
+        description: "Category the sales reason belongs to."

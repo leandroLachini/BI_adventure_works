@@ -1,4 +1,4 @@
-/* Conexão com a fonte dos endereços de compra camada ESTADOS */
+/* connection with buy address source (state layer) */
 
 with
     source as (
@@ -7,7 +7,7 @@ with
         from {{ source('erp_adventure_works', 'STATEPROVINCE') }}
     )
 
-/* Renomeando colunas da tabela e categorizando os dados */
+/* renaming table columns and categorizing data */
 
     , remane_table as (
         select

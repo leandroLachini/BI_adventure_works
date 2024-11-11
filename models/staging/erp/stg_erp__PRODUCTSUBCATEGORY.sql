@@ -1,4 +1,4 @@
-/* Conexão com a fonte dos productsubcategory */
+/* connection with product subcategory source.*/
 
 with
     source as (
@@ -7,7 +7,7 @@ with
         from {{ source('erp_adventure_works', 'PRODUCTSUBCATEGORY') }}
     )
 
-/* Renomeando colunas da tabela e categorizando os dados */
+/* renaming table columns and categorizing data */
 
     , remane_table as (
         select

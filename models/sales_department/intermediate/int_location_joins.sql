@@ -1,4 +1,4 @@
-/* Conexao com a staging ADDRESS */
+/* conection with staging ADDRESS */
 
 with
     address as (
@@ -7,7 +7,7 @@ with
         from {{ ref("stg_erp__ADDRESS")}}
     )
 
-/* Conexao com a staging SATEPROVINCE */
+/* conection with staging SATEPROVINCE */
     
     , state_province as (
         select
@@ -15,7 +15,7 @@ with
         from {{ ref("stg_erp__STATEPROVINCE")}}
     )
 
-/* Conexao com a staging COUNTRYREGION */
+/* conection with staging COUNTRYREGION */
     
     , country_region as (
         select
@@ -23,7 +23,7 @@ with
         from {{ ref("stg_erp__COUNTRYREGION")}}
     )
 
-/* Fazendo os joins para popular tabela com dados relevantes */
+/* making joins to populate a table with relevant data */
 
     , joined as (
         select
