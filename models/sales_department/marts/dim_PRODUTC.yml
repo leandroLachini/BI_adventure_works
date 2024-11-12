@@ -2,19 +2,19 @@ version: 2
 
 models:
   - name: dim_PRODUCT
-    description: "Tabela dimensão que contém informações sobre os produtos."
+    description: "Dimension table that contains information about the products."
     columns:
       - name: PK_PRODUCTID
-        description: "Chave primaria do ID do produto."
+        description: "Primary key for Product records."
       - name: PRODUCT_NAME
-        description: "Nome do produto."
+        description: "Product name."
       - name: PRODUCT_COLOR
-        description: "Nome da cor do produto."
+        description: "Product color"
       - name: PRODUCT_SIZE
-        description: "Tamanho do produto."
+        description: "Product size."
       - name: PRODUCT_WEIGHT
-        description: "Peso do produto."
+        description: "Product weight."
       - name: NAME_SUBCATEGORY_PRODUCT
-        description: "Name of product subcategory."
+        description: "Subcategory description." 
       - name: NAME_CATEGORY_PRODUCT
-        description: "PName of product category."
+        description: "Category description."

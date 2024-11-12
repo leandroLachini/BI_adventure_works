@@ -2,15 +2,17 @@ version: 2
 
 models:
   - name: dim_CUSTOMER
-    description: "Tabela dimensão que contém informações sobre os clientes."
+    description: "Dimension table that contains information about customers."
     columns:
       - name: PK_CUSTOMERID
-        description: "Chave primaria do ID cliente."
+        description: "Primary key for customer records."
       - name: PK_PERSONID
-        description: "Chave primaria do ID cadastro de pessoa."
+        description: "Primary key for PERSON records."
       - name: FK_STOREID
-        description: "Chave estrangeria do ID da loja."
+        description: "Unique identification number for the store. 
+                      Foreign key to Store table."
       - name: FK_TERRITORYID
-        description: "Chave estrangeria do ID da localização."
+        description: "Unique identification number for the territory. 
+                      Foreign key to territory table."
       - name: PERSON_FULL_NAME
-        description: "Nome completo da pessoa."
+        description: "Concat with FIRSTNAME + MIDDLENAME + LASTNAME."

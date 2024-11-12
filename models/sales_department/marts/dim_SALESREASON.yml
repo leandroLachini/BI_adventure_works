@@ -2,11 +2,11 @@ version: 2
 
 models:
   - name: dim_SALESREASON
-    description: "Tabela dimensão que contém informações sobre os motivos de venda/compra."
+    description: "Dimension table that contains information about the reasons for sale/purchase."
     columns:
       - name: PK_SALESREASONID
-        description: "Chave primaria do ID do motivo da venda."
+        description: "Primary key for SalesReason records."
       - name: NAME_SALESREASON
-        description: "Descricao do motivo de venda."
+        description: "Sales reason description."
       - name: TYPE_SALESREASON
-        description: "Descricao do tipo do motivo de venda."
+        description: "Category the sales reason belongs to."
