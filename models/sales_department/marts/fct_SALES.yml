@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: fct_SALES
+    description: "Fact table of sales."
+    columns:
+      - name: FK_SALESORDERID
+        description: "Foreign key to SalesOrderHeader."
+      - name: PK_ORDERDETAILID
+        description: "Primary key. One incremental unique number per product sold."
+      - name: FK_PRODUCTID
+        description: "Product sold to customer. Foreign key to Product."
+      - name: FK_SPECIALOFFERID
+        description: "Promotional code. Foreign key to SpecialOffer."
+      - name: QUANTITY
+        description: "Quantity ordered per product."
+      - name: UNIT_PRICE
+        description: "Selling price of a single product."
+      - name: UNITPRICEDISCOUNT
+        description: "Discount amount. Default 0.0"
+      - name: PK_SALESORDERID
+        description: "Primary key. Foreign key to SalesOrderHeader."
+      - name: PK_SALESORDERID
+        description: "Primary key. Foreign key to SalesOrderHeader."
+      - name: STATUSID
+        description: "Primary key for Status records."
+      - name: PK_CUSTOMERID
+        description: "Primary key for customer records."
+      - name: FK_SALESPERSONID
+        description: "Foreign key to Person."
+      - name: FK_TERRITORYID
+        description: "ID of the territory in which the state or province is located. 
+                      Foreign key to SalesTerritory."
+      - name: FK_BILLTOADDRESSID
+        description: "Customer billing address. Foreign key to Address."
+      - name: FK_ADDRESSID
+        description: "Customer shipping address. Foreign key to Address."
+      - name: FK_SHIPMETHODID
+        description: "Shipping method. Foreign key to ShipMethod."
+      - name: FK_CREDITCARDID
+        description: "Credit card identification number. Foreign key to CreditCard."
+      - name: FK_CURRENCYRATEID
+        description: "Currency exchange rate used. Foreign key to CurrencyRate."
+      - name: FK_SALESREASONID
+        description: "PForeign key to Sales Reason."
+      - name: ORDERDATE
+        description: "Dates the sales order was created. Default: getdate()"
+      - name: DUEDATE
+        description: "Date the order is due to the customer."
+      - name: SHIPDATE
+        description: "Date the order was shipped to the customer."
+      - name: PRORATED_SUBTOTAL
+        description: "Prorated Sales subtotal. Computed as SUM(SalesOrderDetail.LineTotal)for the appropriate SalesOrderID. Default: 0.00."
+      - name: PRORATED_TAXA
+        description: "Prorated Tax amount. Default: 0.00"
+      - name: PRORATED_FREIGHT
+        description: "Prorated Shipping cost. Default: 0.00"
+      - name: PRORATED_TOTAL_SALES
+        description: "Prorated Total due from customer. Computed as Subtotal + TaxAmt + Freight."
+      - name: GROSS_VALUE
+        description: "Gross orders value. Computed as QUANTITY * UNITPRICE."
+      - name: NET_VALUE
+        description: "Net orders value. Computed as QUANTITY * UNITPRICE * (1 - UNITPRICEDISCOUNT)."
+      - name: DISCOUNT_VALUE
+        description: "Discount orders value. Computed as GROSS_VALUE - NET_VALUE."
