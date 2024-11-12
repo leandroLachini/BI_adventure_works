@@ -4,6 +4,25 @@ models:
   - name: stg_erp__SALESORDERHEADER
     description: "Staging table that have information general sales order."
     columns:
+      - name: PK_SALESORDERID
+        description: "Primary key."      
+      - name: FK_STATUSID
+        description: "Order current status. 
+                      1 = In process; 
+                      2 = Approved; 
+                      3 = Backordered; 
+                      4 = Rejected; 
+                      5 = Shipped; 
+                      6 = Cancelled. 
+                      Default: 1"      
+      - name: FK_CUSTOMERID
+        description: "Customer identification number. Foreign key to Customer."      
+      - name: FK_SALESPERSONID
+        description: "Sales person who created the sales order. Foreign key to SalesPerson."      
+      - name: FK_TERRITORYID
+        description: "Territory in which the sale was made. Foreign key to SalesTerritory."      
+      - name: FK_BILLTOADDRESSID
+        description: "Customer billing address. Foreign key to Address."      
       - name: FK_SHIPTOADDRESSID
         description: "Customer shipping address. Foreign key to Address."
       - name: FK_SHIPMETHODID

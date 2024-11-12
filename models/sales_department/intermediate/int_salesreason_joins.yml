@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: int_salesreason_joins
+    description: "Intermediate table of sales reason to perform joins and metrics calculations."
+    columns:
+      - name: PK_SALESORDERID
+        description: "Primary key."
+      - name: PK_SALESREASONID
+        description: "Primary key for SalesReason records."
+      - name: NAME_SALESREASON
+        description: "Sales reason description."
+      - name: TYPE_SALESREASON
+        description: "Category the sales reason belongs to."

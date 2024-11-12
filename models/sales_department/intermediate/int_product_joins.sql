@@ -55,7 +55,7 @@ with
     , metrics as (
         select 
             joined. *
-            , LISTPRICE - STANDARDCOST as PRODUCT_MARGIN
+            , LISTPRICE - STANDARDCOST as PRODUCT_MARGEN
         from joined
     )
 
@@ -65,7 +65,7 @@ with
         PK_PRODUCTID
         , STANDARDCOST
         , LISTPRICE
-        , PRODUCT_MARGIN
+        , PRODUCT_MARGEN
         , PRODUCT_NAME
         , PRODUCT_COLOR
         , PRODUCT_SIZE

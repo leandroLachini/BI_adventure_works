@@ -6,7 +6,7 @@ with
         PK_PRODUCTID
         , STANDARDCOST
         , LISTPRICE
-        , PRODUCT_MARGIN
+        , PRODUCT_MARGEN
         , PRODUCT_NAME
         , PRODUCT_COLOR
         , PRODUCT_SIZE

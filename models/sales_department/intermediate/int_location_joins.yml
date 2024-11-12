@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: int_location_joins
+    description: "Intermediate table of location to perform joins and metrics calculations."
+    columns:
+      - name: PK_ADDRESSID
+        description: "Primary key for Address records."
+      - name: CITY
+        description: "Name of the city."
+      - name: STATE_NAME
+        description: "State or province name."
+      - name: COUNTRY_NAME
+        description: "Country or region name."
