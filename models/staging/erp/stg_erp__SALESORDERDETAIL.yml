@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_erp__SALESORDERDETAIL
-    description: "Sheet staging that have information individual products associated with a specific sales order.."
+    description: "Staging table that have information individual products associated with a specific sales order.."
     columns:
       - name: FK_SALESORDERID
         description: "Primary key. Foreign key to SalesOrderHeader."

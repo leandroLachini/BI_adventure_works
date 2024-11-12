@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_erp__PRODUCTCATEGORY
-    description: "Sheet staging that have information about product category."
+    description: "Staging table that have information about product category."
     columns:
       - name: PK_PRODUCTCATEGORYID
         description: "Primary key for ProductCategory records."

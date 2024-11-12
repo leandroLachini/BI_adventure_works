@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_erp__SALESORDERHEADER
-    description: "Sheet staging that have information general sales order."
+    description: "Staging table that have information general sales order."
     columns:
       - name: FK_SHIPTOADDRESSID
         description: "Customer shipping address. Foreign key to Address."

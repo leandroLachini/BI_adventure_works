@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_erp__PERSON
-    description: "Sheet staging that have information about person."
+    description: "Staging table that have information about person."
     columns:
       - name: PK_PERSONID
         description: "Primary key for Person records."

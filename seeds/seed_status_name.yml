@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: seed_status_name
+    description: "Seed table that creates the status dimension."
+    columns:
+      - name: STATUSID
+        description: "Primary key for Status records."
+      - name: NAME_STATUS
+        description: "Status name."
