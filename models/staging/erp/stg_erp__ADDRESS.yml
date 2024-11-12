@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_erp__ADDRESS
-    description: "Sheet staging that have information about address."
+    description: "Staging table that have information about address."
     columns:
       - name: PK_ADDRESSID
         description: "Primary key for Address records."

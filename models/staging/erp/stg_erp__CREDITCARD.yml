@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_erp__CREDITCARD
-    description: "Sheet staging that have customer credit card information."
+    description: "Staging table that have customer credit card information."
     columns:
       - name: PK_CREDITCARDID
         description: "Primary key for CreditCard records."
