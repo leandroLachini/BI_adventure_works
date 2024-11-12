@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: int_sales_metrics_recurrence
+    description: "Intermediate table of sales recurrence to perform joins and metrics calculations."
+    columns:
+      - name: FK_CUSTOMERID
+        description: "Foreign key to Customer."
+      - name: TOTAL_SALES
+        description: "Value purchase quantity per customer."
+      - name: AVG_DAYS_BETWEEN_ORDERDATE
+        description: "Average number of days between each purchase made."

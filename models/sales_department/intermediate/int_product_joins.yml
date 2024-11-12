@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: int_product_joins
+    description: "Intermediate table of product to perform joins and metrics calculations."
+    columns:
+      - name: PK_PRODUCTID
+        description: "Primary key for Product records."
+      - name: STANDARDCOST
+        description: "Standard cost of the product."
+      - name: LISTPRICE
+        description: "Selling price."
+      - name: PRODUCT_MARGEN
+        description: "Margen of each product. Computed as LISTPRICE - STANDARCOST."
+      - name: PRODUCT_NAME
+        description: "Product name."
+      - name: PRODUCT_COLOR
+        description: "Product color"
+      - name: PRODUCT_SIZE
+        description: "Product size."
+      - name: PRODUCT_WEIGHT
+        description: "Product weight."
+      - name: NAME_SUBCATEGORY_PRODUCT
+        description: "Subcategory description." 
+      - name: NAME_CATEGORY_PRODUCT
+        description: "Category description."

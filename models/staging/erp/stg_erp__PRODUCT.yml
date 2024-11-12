@@ -13,8 +13,10 @@ models:
         description: "Date the product was available for sale."
       - name: SELLENDDATE
         description: "Date the product was no longer available for sale."
+      - name: PRODUCT_NAME
+        description: "Product name."
       - name: PRODUCT_COLOR
-        description: "Product color"
+        description: "Product color."
       - name: SAFETYSTOCK
         description: "Minimum inventory quantity."
       - name: REORDERPOINT

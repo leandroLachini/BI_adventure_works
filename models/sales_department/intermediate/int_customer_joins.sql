@@ -27,6 +27,5 @@ with
         from customer
         left join person on person.PK_PERSONID = customer.FK_PERSONID
     )
-select
-*
-from joined
+
+select * from joined

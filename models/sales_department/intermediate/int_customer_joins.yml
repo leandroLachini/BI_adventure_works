@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: int_customer_join
+    description: " Intermediate table of customers to perform joins and metrics calculations."
+    columns:
+      - name: PK_CUSTOMERID
+        description: "Primary key for customer records."
+      - name: PK_PERSONID
+        description: "Primary key for PERSON records."
+      - name: FK_STOREID
+        description: "Unique identification number for the store. 
+                      Foreign key to Store table."
+      - name: FK_TERRITORYID
+        description: "Unique identification number for the territory. 
+                      Foreign key to territory table."
+      - name: PERSON_FULL_NAME
+        description: "Concat with FIRSTNAME + MIDDLENAME + LASTNAME."
