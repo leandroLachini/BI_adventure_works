@@ -42,7 +42,9 @@ models:
       - name: FK_CURRENCYRATEID
         description: "Currency exchange rate used. Foreign key to CurrencyRate."
       - name: FK_SALESREASONID
-        description: "PForeign key to Sales Reason."
+        description: "Foreign key to Sales Reason."
+      - name: FK_SALESREASONID_2
+        description: "Sorts null values ​​to 10 = others. Foreign key to Sales Reason."
       - name: ORDERDATE
         description: "Dates the sales order was created. Default: getdate()"
       - name: DUEDATE

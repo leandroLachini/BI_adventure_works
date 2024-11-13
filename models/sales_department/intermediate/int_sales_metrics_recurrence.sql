@@ -56,5 +56,17 @@ with
         FK_CUSTOMERID
 )
 
+/* generating metrics for analysis */
+, order_recurrence as (
+
+    select
+        metrics.*
+        , case
+            when AVG_DAYS_BETWEEN_ORDERDATE >= 90 then 'NO'
+            when AVG_DAYS_BETWEEN_ORDERDATE < 90 then 'YES'
+            end as IS_RECURRENCE
+    from metrics
+)
+
 /* Final table */
-select * from metrics
+select * from order_recurrence
