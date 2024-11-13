@@ -8,7 +8,7 @@ with
         select
             PK_SALESORDERID
         from {{ ref('int_sales_metrics') }}
-    ) -- $12.646.112,16
+    )
 
     , disctinct_salesorderid as (
         select
