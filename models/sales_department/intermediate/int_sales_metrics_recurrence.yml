@@ -10,3 +10,5 @@ models:
         description: "Value purchase quantity per customer."
       - name: AVG_DAYS_BETWEEN_ORDERDATE
         description: "Average number of days between each purchase made."
+      - name: IS_RECURRENCE
+        description: "Checks whether the customer purchases repeatedly. If AVG_DAYS_BETWEEN_ORDERDATE is < 90, yes, otherwise no."

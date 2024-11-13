@@ -63,6 +63,10 @@ with
             , {{gross_income('QUANTITY', 'UNIT_PRICE')}} as GROSS_VALUE
             , {{net_value('QUANTITY', 'UNIT_PRICE', 'UNITPRICEDISCOUNT')}} as NET_VALUE
             , cast(GROSS_VALUE - NET_VALUE as numeric(30,4)) as DISCOUNT_VALUE
+            , case
+                when FK_SALESREASONID IS NULL then 10
+                ELSE FK_SALESREASONID
+                end as FK_SALESREASONID_2
         from joined
     )
 
@@ -87,6 +91,7 @@ with
         , FK_CREDITCARDID
         , FK_CURRENCYRATEID
         , FK_SALESREASONID
+        , FK_SALESREASONID_2
         , ORDERDATE
         , DUEDATE
         , SHIPDATE
