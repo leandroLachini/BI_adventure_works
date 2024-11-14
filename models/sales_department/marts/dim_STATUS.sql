@@ -1,4 +1,4 @@
-/* Dimensao Status da Pedido */
+/* Dimension Status */
 
 with
     seed as (

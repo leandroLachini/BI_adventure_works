@@ -1,4 +1,4 @@
-/* Dimensao clientes */
+/* Dimension Customer */
 
 with
     int_customer as (

@@ -1,4 +1,4 @@
-/* Dimensao motivo da compra */
+/* Dimension Sales Reason */
 
 with
     int_salesreason as (

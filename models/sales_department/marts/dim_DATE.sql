@@ -1,4 +1,4 @@
-/* Dimensao Data criada com clientes com base no artigo 
+/* Dimension Date created with based on the article 
 https://medium.com/indiciumtech/date-dimension-how-to-create-a-practical-and-useful-date-dimension-in-dbt-5ee70a18f3bb
 */
 

@@ -1,4 +1,4 @@
-/* Fatos vendas */
+/* Fact Sales */
 
 with
     int_sales as (
