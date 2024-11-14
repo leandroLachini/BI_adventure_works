@@ -25,7 +25,8 @@ with
             header_sales_reason.PK_SALESORDERID
     )
 
-    , has_on_promotion as (
+/* making joins to surrogate */
+    , join_surrogate as (
         select
             PK_SALESORDERID
             , coalesce(ALL_NAME_SALESREASON, 'No Reason') as NAMES_SALESREASON
@@ -33,13 +34,22 @@ with
         from joined_reason
     )
 
-    , final_reason as (
+/* created surrogate key */
+    , created_surrogate as (
         select
             {{ dbt_utils.generate_surrogate_key(['SK_SALESREASON_JOIN']) }} AS SK_SALESREASON
             , PK_SALESORDERID
             , NAMES_SALESREASON
-        from has_on_promotion
+        from join_surrogate
     )
 
-select *
-from final_reason
+/* final format of the table */
+    , final_table as (
+        select
+        SK_SALESREASON
+        , PK_SALESORDERID
+        , NAMES_SALESREASON
+        from created_surrogate
+    )
+
+select * from final_table

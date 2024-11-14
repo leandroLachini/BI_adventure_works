@@ -1,4 +1,4 @@
-/* Dimensao produtos */
+/* Dimension Product */
 
 with
     int_product as (

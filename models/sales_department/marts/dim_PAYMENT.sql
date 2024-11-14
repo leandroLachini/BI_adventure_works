@@ -1,4 +1,4 @@
-/* Dimensao Pagamentos Cartão */
+/* Dimension Payment */
 
 with
     staging as (
