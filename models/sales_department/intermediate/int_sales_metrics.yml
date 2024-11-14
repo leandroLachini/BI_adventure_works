@@ -41,10 +41,6 @@ models:
         description: "Credit card identification number. Foreign key to CreditCard."
       - name: FK_CURRENCYRATEID
         description: "Currency exchange rate used. Foreign key to CurrencyRate."
-      - name: FK_SALESREASONID
-        description: "Foreign key to Sales Reason."
-      - name: FK_SALESREASONID_2
-        description: "Sorts null values ​​to 10 = others. Foreign key to Sales Reason."
       - name: ORDERDATE
         description: "Dates the sales order was created. Default: getdate()"
       - name: DUEDATE
@@ -65,3 +61,7 @@ models:
         description: "Net orders value. Computed as QUANTITY * UNITPRICE * (1 - UNITPRICEDISCOUNT)."
       - name: DISCOUNT_VALUE
         description: "Discount orders value. Computed as GROSS_VALUE - NET_VALUE."
+      - name: NAMES_SALESREASON
+        description: "NAME OF ALL SALES REASON SEPARATE BY (,)."
+      - name: SK_SALESREASON
+        description: "Surrogate key created to Sales Reason."
