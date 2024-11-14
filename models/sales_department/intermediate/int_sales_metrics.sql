@@ -11,9 +11,11 @@ with
         from {{ ref('stg_erp__SALESORDERDETAIL') }}
     )
 
+/* conection with intermediate SALESREASON_JOINS */
 /* Select of SALESREASONID = 2 */
-    , reason_2 as (
-        {{select_reason(2)}}
+    , sales_reason as (
+        select *
+        from {{ ref('int_salesreason_joins') }}
     )
 
 /* making joins to populate a table with relevant data */
@@ -44,12 +46,13 @@ with
         , sales_header.TAXA
         , sales_header.FREIGHT
         , sales_header.TOTAL_SALES
-        , reason_2.FK_SALESREASONID
+        , coalesce(sales_reason.NAMES_SALESREASON, 'No Reason') as NAMES_SALESREASON
+        , sales_detail.FK_SALESORDERID || NAMES_SALESREASON AS SK_SALESREASON_JOIN
         from sales_detail
         left join sales_header 
             on sales_header.PK_SALESORDERID = sales_detail.FK_SALESORDERID
-        left join reason_2 
-            on reason_2.PK_SALESORDERID = sales_header.PK_SALESORDERID
+        left join sales_reason 
+            on sales_reason.PK_SALESORDERID = sales_header.PK_SALESORDERID
     )
 
 /* generating metrics for analysis */
@@ -63,10 +66,7 @@ with
             , {{gross_income('QUANTITY', 'UNIT_PRICE')}} as GROSS_VALUE
             , {{net_value('QUANTITY', 'UNIT_PRICE', 'UNITPRICEDISCOUNT')}} as NET_VALUE
             , cast(GROSS_VALUE - NET_VALUE as numeric(30,4)) as DISCOUNT_VALUE
-            , case
-                when FK_SALESREASONID IS NULL then 10
-                ELSE FK_SALESREASONID
-                end as FK_SALESREASONID_2
+            , {{ dbt_utils.generate_surrogate_key(['SK_SALESREASON_JOIN']) }} AS SK_SALESREASON
         from joined
     )
 
@@ -90,8 +90,6 @@ with
         , FK_SHIPMETHODID
         , FK_CREDITCARDID
         , FK_CURRENCYRATEID
-        , FK_SALESREASONID
-        , FK_SALESREASONID_2
         , ORDERDATE
         , DUEDATE
         , SHIPDATE
@@ -102,6 +100,8 @@ with
         , GROSS_VALUE
         , NET_VALUE
         , DISCOUNT_VALUE
+        , NAMES_SALESREASON
+        , SK_SALESREASON
         from metrics
     )
 
