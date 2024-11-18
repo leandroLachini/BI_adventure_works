@@ -31,8 +31,4 @@ Connect Power BI to the Snowflake database.
 ## Technologies Used
 - Snowflake: Database Storage.
 - DBT: Data transform.
-<<<<<<< HEAD
 - Power BI: Data visualization and dashboard creation.
-=======
-- Power BI: Data visualization and dashboard creation.
->>>>>>> 2fc98e56407f4a945c122229be2f78be815e0809
