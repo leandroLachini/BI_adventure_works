@@ -17,7 +17,7 @@ Used the Snowflake data warehouse with DBT integration for data transformation.
 #### 4. Products layer.
 Layer that exposes data products to consumers external to the data platform such as data analyst.
 Connect Power BI to the Snowflake database.
-Build an interactive dashboard featuring:
+- Build an interactive dashboard featuring:
 Key sales metrics.
 Product performance.
 Date performance.
