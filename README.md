@@ -1,4 +1,4 @@
-# Adventure Works - ELT with DBT Integration and Dashboard with Power BI
+# Adventure Works - ELT with Snowflake/DBT Integration and BI with Power BI
 
 ## Project Objective
 This project aims to use Modern Data Stack to create a dynamic dashboard in Power BI using the Adventure Works dataset.
