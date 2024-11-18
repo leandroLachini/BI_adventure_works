@@ -4,9 +4,12 @@ models:
   - name: dim_SALESREASON
     description: "Dimension table that contains information about the reasons for sale/purchase."
     columns:
+      - name: SK_SALESREASON
+        description: "Surrogate key created."
+        data-tests:
+                - unique
+                - not_null
       - name: PK_SALESREASONID
         description: "Primary key for SalesReason records."
       - name: NAME_SALESREASON
         description: "Sales reason description."
-      - name: TYPE_SALESREASON
-        description: "Category the sales reason belongs to."
