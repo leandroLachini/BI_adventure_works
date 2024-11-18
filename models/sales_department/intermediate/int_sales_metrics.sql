@@ -12,7 +12,6 @@ with
     )
 
 /* conection with intermediate SALESREASON_JOINS */
-/* Select of SALESREASONID = 2 */
     , sales_reason as (
         select *
         from {{ ref('int_salesreason_joins') }}
@@ -21,7 +20,6 @@ with
 /* making joins to populate a table with relevant data */
     , joined as (
         select
-        --*
         sales_detail.FK_SALESORDERID
         , sales_detail.PK_ORDERDETAILID
         , sales_detail.FK_PRODUCTID

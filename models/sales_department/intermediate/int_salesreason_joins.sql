@@ -30,7 +30,7 @@ with
         select
             PK_SALESORDERID
             , coalesce(ALL_NAME_SALESREASON, 'No Reason') as NAMES_SALESREASON
-            , PK_SALESORDERID || NAMES_SALESREASON AS SK_SALESREASON_JOIN
+            , PK_SALESORDERID || NAMES_SALESREASON as SK_SALESREASON_JOIN
         from joined_reason
     )
 
