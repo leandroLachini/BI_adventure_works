@@ -18,15 +18,15 @@ Used the Snowflake data warehouse with DBT integration for data transformation.
 Layer that exposes data products to consumers external to the data platform such as data analyst.
 Connect Power BI to the Snowflake database.
 - Build an interactive dashboard featuring:
-Key sales metrics.
-Product performance.
-Date performance.
-Customer and City ranking.
+    Key sales metrics.
+    Product performance.
+    Date performance.
+    Customer and City ranking.
 
 ## Key Features
-Modern Data Stack: Cloud architecture more flexible and capable of dealing with the large amount of data that companies currently receive.
-Data Warehouse: A large, centralized repository that stores structured and semi-structured data. It provides a single source for analysts and data scientists.
-Bussiness Inteligence: Business intelligence (BI) and analytics tools are used to visualize and analyze data.
+- Modern Data Stack: Cloud architecture more flexible and capable of dealing with the large amount of data that companies currently receive.
+- Data Warehouse: A large, centralized repository that stores structured and semi-structured data. It provides a single source for analysts and data scientists.
+- Bussiness Inteligence: Business intelligence (BI) and analytics tools are used to visualize and analyze data.
 
 ## Technologies Used
 Snowflake: Database Storage.
