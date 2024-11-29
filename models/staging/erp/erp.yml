@@ -11,7 +11,7 @@ sources:
         description: Tabela fonte CHAVE dos pedidos vendidos.
         columns:
           - name: SALESORDERID
-            data-tests:
+            data_tests:
               - unique
               - not_null
 
@@ -19,7 +19,7 @@ sources:
         description: Tabela fonte dos pedidos vendidos detalhados.
         columns:
           - name: SALESORDERID
-            data-tests:
+            data_tests:
               - unique
               - not_null
 
@@ -27,7 +27,7 @@ sources:
         description: Tabela fonte dos clientes que realizaram pedidos.
         columns:
           - name: CUSTOMERID
-            data-tests:
+            data_tests:
               - unique
               - not_null
 
@@ -35,7 +35,7 @@ sources:
         description: Tabela fonte dos pessoas cadastradas.
         columns:
           - name: BUSINESSENTITYID
-            data-tests:
+            data_tests:
               - unique
               - not_null
 
@@ -43,7 +43,7 @@ sources:
         description: Tabela fonte dos pessoas cadastradas.
         columns:
           - name: PRODUCTID
-            data-tests:
+            data_tests:
               - unique
               - not_null
 
@@ -51,7 +51,7 @@ sources:
         description: Tabela fonte dos pessoas cadastradas.
         columns:
           - name: CREDITCARDID
-            data-tests:
+            data_tests:
               - unique
               - not_null
 
@@ -59,7 +59,7 @@ sources:
         description: Tabela fonte dos motivos de compra.
         columns:
           - name: SALESREASONID
-            data-tests:
+            data_tests:
               - unique
               - not_null
 
@@ -67,7 +67,7 @@ sources:
         description: Tabela fonte CHAVE dos motivos de compra.
         columns:
           - name: SALESORDERID
-            data-tests:
+            data_tests:
               - unique
               - not_null
 
@@ -75,7 +75,7 @@ sources:
         description: Tabela fonte dos endereço de compras camada CIDADE.
         columns:
           - name: ADDRESSID
-            data-tests:
+            data_tests:
               - unique
               - not_null
 
@@ -83,7 +83,7 @@ sources:
         description: Tabela fonte dos endereço de compras camada ESTADO.
         columns:
           - name: STATEPROVINCEID
-            data-tests:
+            data_tests:
               - unique
               - not_null
 
@@ -91,7 +91,7 @@ sources:
         description: Tabela fonte dos endereço de compras camada PAIS.
         columns:
           - name: COUNTRYREGIONCODE
-            data-tests:
+            data_tests:
               - unique
               - not_null
 
@@ -99,7 +99,7 @@ sources:
         description: Tabela fonte subcategory of prodcuts.
         columns:
           - name: PRODUCTSUBCATEGORYID
-            data-tests:
+            data_tests:
               - unique
               - not_null
 
@@ -107,7 +107,7 @@ sources:
         description: Tabela fonte category of prodcuts.
         columns:
           - name: PRODUCTCATEGORYID
-            data-tests:
+            data_tests:
               - unique
               - not_null
               
